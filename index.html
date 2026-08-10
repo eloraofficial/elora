@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="élora — Your beauty finds, all in one place. Shop makeup, perfumes, and beauty essentials for her & him.">
+  <title>élora | Beauty & Fragrance</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="#home" class="brand"><img src="logo.png" alt="élora"></a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#shop">Shop</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="cart-btn" onclick="openCart()">Bag <span id="cart-count">0</span></button>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">WELCOME TO ÉLORA</p>
+        <h1>Your beauty finds,<br><em>all in one place.</em></h1>
+        <p class="hero-text">Makeup, fragrance & beauty essentials chosen to become your next obsession.</p>
+        <a class="button" href="#shop">Shop the collection</a>
+      </div>
+      <div class="hero-mark">
+        <img src="logo.png" alt="élora logo">
+      </div>
+    </section>
+
+    <section class="categories">
+      <a href="#shop" onclick="filterProducts('Makeup')">Makeup</a>
+      <a href="#shop" onclick="filterProducts('Women')">Women's Fragrance</a>
+      <a href="#shop" onclick="filterProducts('Men')">Men's Fragrance</a>
+    </section>
+
+    <section id="shop" class="shop">
+      <div class="section-heading">
+        <p class="eyebrow">THE ÉLORA EDIT</p>
+        <h2>Shop our finds</h2>
+      </div>
+      <div class="filters">
+        <button class="filter active" onclick="filterProducts('All', this)">All</button>
+        <button class="filter" onclick="filterProducts('Makeup', this)">Makeup</button>
+        <button class="filter" onclick="filterProducts('Women', this)">Women</button>
+        <button class="filter" onclick="filterProducts('Men', this)">Men</button>
+      </div>
+      <div id="products" class="product-grid"></div>
+    </section>
+
+    <section id="about" class="about">
+      <div>
+        <p class="eyebrow">ABOUT ÉLORA</p>
+        <h2>Made for every beauty mood.</h2>
+      </div>
+      <p>élora is your destination for makeup, fragrances and beauty essentials for her & him. Discover pieces you’ll love, all in one place.</p>
+    </section>
+
+    <section id="contact" class="contact">
+      <p class="eyebrow">STAY IN THE LOOP</p>
+      <h2>Follow élora</h2>
+      <p>New finds, launches & more.</p>
+      <div class="socials">
+        <a href="https://instagram.com/elora.official.eg" target="_blank">Instagram · @elora.official.eg</a>
+        <a href="https://tiktok.com/@elora.offical" target="_blank">TikTok · @elora.offical</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2026 élora. All rights reserved.</footer>
+
+  <div id="cart-modal" class="modal" aria-hidden="true">
+    <div class="cart-panel">
+      <button class="close" onclick="closeCart()">×</button>
+      <p class="eyebrow">YOUR BAG</p>
+      <h2>Your picks</h2>
+      <div id="cart-items"></div>
+      <div class="cart-total"><span>Total</span><strong id="cart-total">EGP 0</strong></div>
+      <button class="button full" onclick="alert('Checkout can be connected to your preferred payment/order method next.')">Continue to checkout</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
